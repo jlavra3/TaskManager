@@ -1,0 +1,81 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Purdue Task Manager</title>
+    <script>
+      function list() {
+        newElement();
+        array();
+        var dd = document.createElement("dd");
+        for (i = 0; i < theArray.length; i++) {
+          var y = document.createTextNode(theArray[i]);
+          dd.appendChild(y);
+          document.getElementById("list").appendChild(dd);
+        }
+
+      }
+    </script>
+  </head>
+  <body style="color:white; background-color:#a08cff">
+    <img width="100" src="Main_logo.jpeg"></img>
+    <center><img width="300" src="Horiz_only.jpeg"/></center>
+    <h1><center>Student Task Manager</center></h1>
+    <hr/>
+
+    <center><div><big>Welcome to the Purdue University Task Manager!</big></div>
+
+    <p>It is currently: <br> <span id="datetime"></span></p><script>
+      var dt = new Date(); document.getElementById("datetime").
+      innerHTML=dt.toLocaleString();</script>
+
+    <p>You have <b>__<b/> task(s) due today<p/>
+    <p>You have <b>__<b/> task(s) due in the next 7 days<p/>
+
+
+    <input type="button" onclick="location.href='JavaScript_type_beat.html';"
+    value="Create New Task"/>
+    </center>
+    <hr/>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Due Date</th>
+          <th>Assignment</th>
+          <th>Class</th>
+          <th>Priority</th>
+        </tr>
+
+      <!-- </thead>
+      <tr>
+        <td>var v11</td>
+        <td>var v12</td>
+        <td>var v13</td>
+        <td>var v14</td>
+      </tr>
+      <tr>
+        <td>var v21</td>
+        <td>var v22</td>
+        <td>var 23</td>
+        <td>var24</td> -->
+
+      <input type="button" onclick="location.href='TaskSort1.html';"
+      value="View Tasks by Priority"/>
+
+      <button onclick="OrderPriority.html" id="OrderPriorityBut">
+        View Tasks by Due Date</button>
+
+      <input type="button" onclick="location.href='DojaCat.html';"
+        value="Doja Cat"/>
+
+      <br>
+      <br>
+
+      <dt id="list">
+        </dt>
+        <center><div style="overflow: hidden; max-width: 736px;">
+  <iframe scrolling="no" src="JavaScript_type_beat.html" style="border: 0px none" height="1000">
+  </iframe>
+  </div></center>
+  </body>
+</html>

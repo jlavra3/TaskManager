@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Task Adder</title>
+    <script>
+      var theArray = [];
+      function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("class").value;
+        var asn = document.getElementById("text1").value;
+        var str1 = document.getElementById("text2").value;
+        var year = str1.substring(0,4);
+        var month = str1.substring(5,7);
+        var day = str1.substring(8,10);
+        var date = month + "/" + day + "/" + year;
+        var select = document.getElementById("text3");
+        var option = select.options[select.selectedIndex];
+        var task = date + " " + asn + " " + inputValue + " " + option.id;
+        var t = document.createTextNode(task);
+        li.appendChild(t);
+        document.getElementById("yuh").appendChild(li);
+        document.getElementById("class").value = "";
+        document.getElementById("text1").value = "";
+        document.getElementById("text2").value = "";
+
+        // var list = document.getElementById('yuh').childNodes;
+        // for(var i=0;i < list.length; i++) {
+        //     var arrValue = list[i].innerHTML;
+        //
+        //     theArray.push(arrValue);
+      }
+      function array() {
+        var list = document.getElementById('yuh').childNodes;
+        for(var i=0;i < list.length; i++) {
+            var arrValue = list[i].innerHTML;
+            theArray.push(arrValue);
+      }
+      alert(theArray);
+    }
+
+
+
+    </script>
+  </head>
+  <body style="color:white; background-color:#a08cff">
+    <header>
+      <a href="homepage.html"><img width="100" src="main_logo.jpeg"></a>
+      <center><h1>Task Adder</h1>
+      <hr>
+      <h2>This is the space to add your tasks<h2></center>
+    </header>
+    <main>
+      <center><div><h3>Please enter a class</h3></div>
+      <input id="class" placeholder="Class">
+      <div><h3>Please enter a task</h3></div>
+      <input id="text1" placeholder="Enter Here">
+      <br>
+      <div>Due date</div>
+      <input type="date" id="text2" placeholder="Due date">
+      <br>
+      <div>Choose a priority level:</div>
+      <select id="text3" name="priority">
+        <option id="high">high</option>
+        <option id="medium">medium</option>
+        <option id="low">low</option>
+      </select>
+      <br>
+      <br>
+      <button onclick="newElement()" id="but1">Submit</button></center>
+    </main>
+      <ul id="yuh">
+      </ul>
+
+  </body>
+</html>
