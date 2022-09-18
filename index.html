@@ -1,41 +1,180 @@
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Purdue Task Manager</title>
-  </head>
-  <body style="background-color:#cfb991">
-    <img width="300" src="PurdueLogo.png"/>
-    <h2>Student Task Manager</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="author" content="Joshua Lear, Jacob Lavra, and Ethan Potter">
+<meta name="keywords" content="Task Manager">
+<meta name="description" content="Task Manager">  
+<meta name="viewport">
+<title>Task Manager</title>
+<script>
+  var theArray = [];
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("class").value;
+    var asn = document.getElementById("text1").value;
+    var str1 = document.getElementById("text2").value;
+    var year = str1.substring(0,4);
+    var month = str1.substring(5,7);
+    var day = str1.substring(8,10);
+    var date = month + "/" + day + "/" + year;
+    var select = document.getElementById("text3");
+    var option = select.options[select.selectedIndex];
+    var task = inputValue + " assignment: " + asn + " is due " + date + ". Priority: " + option.id + '\n';
+    var t = document.createTextNode(task);
+    li.appendChild(t);
+    document.getElementById("yuh").appendChild(li);
+    document.getElementById("class").value = "";
+    document.getElementById("text1").value = "";
+    document.getElementById("text2").value = "";
+
+    // var list = document.getElementById('yuh').childNodes;
+    // for(var i=0;i < list.length; i++) {
+    //     var arrValue = list[i].innerHTML;
+    //
+    //     theArray.push(arrValue);
+  }
+  function array() {
+    var list = document.getElementById('yuh').childNodes;
+    for(var i=0;i < list.length; i++) {
+        var arrValue = list[i].innerHTML;
+        theArray.push(arrValue);
+      }
+    }
+  // function dueToday() {
+  //   for (i=0; i < theArray.length; i++) {
+  //
+  //     var todayIsh = theArray[i];
+  //     var todayIsh = todayIsh.substring()
+  //     var ex = new Date();
+  //     if (ex < 10) {
+  //       var ex = "0" + ex;
+  //     }
+  //     if (todayIsh == ex.substring(0,10)) {}
+  //
+  //         }
+  //   }
+
+
+//
+//   }
+//
+//   }
+//   alert(theArray);
+// }
+
+
+
+</script>
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 0px;
+}
+
+.left {
+  left: 0;
+  background-color: #a08cff;
+}
+
+.right {
+  right: 0;
+  background-color: #a08cff;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
+</head>
+<body style="background-color:#a08cff">
+  <center><img width="100" src="Main_logo.jpeg"></img></center>
+  <center><img width="300" src="Horiz_only.jpeg"/></center>
+  <!-- <h1><center>Student Task Manager</center></h1> -->
+  <center><big><ul id="yuh">
+  </ul></big></center>
+
+<div class="split right">
+  <div class="centered">
+        <header>
+      <br><br><br><br>
+      <center><h1>Task Adder</h1>
+      <hr>
+      <h2>This is the space to add your tasks<h2></center>
+    </header>
+    <main>
+      <center><div><big>Please enter a class</big></div>
+      <input id="class" placeholder="Class">
+      <div><big>Please enter a task</big></div>
+      <input id="text1" placeholder="Enter Here">
+      <br>
+      <div><big>Due date</big></div>
+      <input type="date" id="text2" placeholder="Due date">
+      <br>
+      <div><big>Choose a priority level:<big></div>
+      <select id="text3" name="priority">
+        <option id="high">high</option>
+        <option id="medium">medium</option>
+        <option id="low">low</option>
+      </select>
+      <br>
+      <br>
+      <button onclick="newElement()" id="but1">Submit</button></center>
+    </main>
+      <!-- <ul id="yuh">
+      </ul> -->
+
+  </div>
+</div>
+
+<div class="split left">
+  <div class="centered">
+    <!-- <img width="100" src="Main_logo.jpeg"></img>
+    <center><img width="300" src="Horiz_only.jpeg"/></center> -->
+    <h2><center>Student Task Manager</center></h2>
     <hr/>
 
-    <div>Welcome to the Purdue University Task Manager!</div>
+    <center><div><big>Welcome to the Task Manager!</big></div>
 
     <p>It is currently: <br> <span id="datetime"></span></p><script>
       var dt = new Date(); document.getElementById("datetime").
       innerHTML=dt.toLocaleString();</script>
 
-    <p>You have <b>__<b/> task(s) due today<p/>
-    <p>You have <b>__<b/> task(s) due in the next 7 days<p/>
+    <!-- <p>You have <b>__<b/> task(s) due today<p/>
+    <p>You have <b>__<b/> task(s) due in the next 7 days<p/> -->
 
 
-    <input type="button" onclick="location.href='addTask.html';"
-    value="Create New Task"/>
-
+    </center>
     <hr/>
-    <script>
-      theArray.toLocaleString(1);
-      
-    </script>
 
-    <table>
+    <!-- <table>
       <thead>
         <tr>
           <th>Due Date</th>
           <th>Assignment</th>
           <th>Class</th>
           <th>Priority</th>
-        </tr>
-      </thead>
+        </tr> -->
+
+      <!-- </thead>
       <tr>
         <td>var v11</td>
         <td>var v12</td>
@@ -46,19 +185,38 @@
         <td>var v21</td>
         <td>var v22</td>
         <td>var 23</td>
-        <td>var24</td>
+        <td>var24</td> -->
 
-      <input type="button" onclick="location.href='TaskSort1.html';"
+      <!-- <input type="button" onclick="location.href='TaskSort1.html';"
       value="View Tasks by Priority"/>
 
       <button onclick="OrderPriority.html" id="OrderPriorityBut">
-        View Tasks by Due Date</button>
+        View Tasks by Due Date</button> -->
 
-      <input type="button" onclick="location.href='DojaCat.html';"
-        value="Doja Cat"/>
 
-      <br>
-      <br>
 
-  </body>
+      <p id="demo"></p>
+
+<script>
+var red =
+Math.floor(Math.random() * 12);
+if (red <= 2) {
+  document.getElementById("demo").innerHTML = "The development team of this site had no clue what they were doing!";
+} else if (red > 2 && red <= 5 ) {
+  document.getElementById("demo").innerHTML = "Wishing you good luck on your next exam!";
+} else if (red > 5 && red <= 8) {
+  document.getElementById("demo").innerHTML = "What is the real meaning of truth?";
+} else if (red > 8 && red <= 10) {
+  document.getElementById("demo").innerHTML = "New features coming!"
+} else {
+  document.getElementById("demo").innerHTML = '"Wait, is this site even functional???"-The Developers'
+}
+</script>
+      <dt id="list">
+        </dt>
+
+  </div>
+</div>
+
+</body>
 </html>
